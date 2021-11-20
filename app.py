@@ -5,14 +5,13 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 # from BeautifulSoup import BeautifulSoup
 import pandas as pd
+import os
 app = Flask(__name__)
-
+os.chmod('./chromedriver', 0o755)
 
 @app.route('/')
 def index():
     return 'search a job with /search/:keyword/:zipcode/:radius', 200
-
-print("hello")
 
 @app.route('/search/<keyword>/<zipcode>/<radius>', methods=['GET'])
 def search(keyword = None, zipcode = None, radius = None):
