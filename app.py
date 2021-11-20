@@ -28,10 +28,10 @@ def search(keyword = None, zipcode = None, radius = None):
     jobs = []
 
 
-
+    print('test1')
     #searches a specific job title (keyword, e.g. sales) on linkedin
     driver.get('https://www.linkedin.com/jobs/search/?distance=' + radius + '&geoId=100530215&keywords=' + keyword + '&location=' + zipcode)
-    
+    print('test2')
     content = driver.page_source
     soup = BeautifulSoup(content, 'lxml')
 
@@ -73,11 +73,13 @@ def search(keyword = None, zipcode = None, radius = None):
         for index, element in enumerate(soup.findAll('a', href=True, attrs={'class':'hidden-nested-link'})):
             company = ''.join(element.findAll(text=True)).replace('\n', '').rstrip().lstrip()
             linkedin_jobs[index]['company'] = company
+            print('test3')
 
         # TODO make this get the element containing the link
         for index, link in enumerate(soup.findAll('a', href=True, attrs={'class':'base-card__full-link'})):
             #link = ''.join(link.findAll())
             linkedin_jobs[index]['link'] = link.get('href')
+            print('test4')
 
         # add the jobs from this site to the master list of jobs
         for job in linkedin_jobs:
