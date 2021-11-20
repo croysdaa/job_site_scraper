@@ -18,7 +18,7 @@ print("hello")
 def search(keyword = None, zipcode = None, radius = None):
     #allows program to scrape websites through chrome browser
     GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-    CHROMEDRIVER_PATH = './chromedriver.exe'
+    CHROMEDRIVER_PATH = './chromedriver'
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
