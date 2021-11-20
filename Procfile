@@ -1,1 +1,1 @@
-web: flask run --port 5069
+web: gunicorn app:site_scraper
