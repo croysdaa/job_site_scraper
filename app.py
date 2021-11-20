@@ -12,6 +12,7 @@ app = Flask(__name__)
 def index():
     return 'search a job with /search/:keyword/:zipcode/:radius', 200
 
+print("hello")
 
 @app.route('/search/<keyword>/<zipcode>/<radius>', methods=['GET'])
 def search(keyword = None, zipcode = None, radius = None):
