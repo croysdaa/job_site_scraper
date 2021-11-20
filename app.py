@@ -16,8 +16,13 @@ def index():
 @app.route('/search/<keyword>/<zipcode>/<radius>', methods=['GET'])
 def search(keyword = None, zipcode = None, radius = None):
     #allows program to scrape websites through chrome browser
+    GOOGLE_CHROME_PATH = '/nfs/stak/users/croysdaa/361/.apt/usr/bin/google_chrome'
+    CHROMEDRIVER_PATH = '/nfs/stak/users/croysdaa/361/.chromedriver/bin/chromedriver'
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.binary_location = GOOGLE_CHROME_PATH
     driver = webdriver.Chrome(executable_path="/nfs/stak/users/croysdaa/361/chromedriver", chrome_options=chrome_options)
 
     jobs = []
