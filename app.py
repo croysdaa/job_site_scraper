@@ -23,7 +23,7 @@ def search(keyword = None, zipcode = None, radius = None):
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.binary_location = GOOGLE_CHROME_PATH
-    driver = webdriver.Chrome(executable_path="/nfs/stak/users/croysdaa/361/chromedriver", chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
     jobs = []
 
