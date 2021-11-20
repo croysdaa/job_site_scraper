@@ -15,7 +15,7 @@ def index():
 def search(keyword = None, zipcode = None, radius = None):
     #allows program to scrape websites through chrome browser
     GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-    CHROMEDRIVER_PATH = '/app/.heroku/python/lib/python3.9/site-packages/chromedriver'
+    CHROMEDRIVER_PATH = '/.venv3/lib/python3.6/site-packages/chromedriver'
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
